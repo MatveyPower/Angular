@@ -1,0 +1,33 @@
+*{
+    
+    margin: 0;
+}
+
+
+ul{
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+}
+.alert{
+    margin: 2%;
+}
+ul li button{
+    float: right;
+}
+
+@media screen and (max-width: 768px){
+    ul{
+        grid-template-columns: 1fr 1fr;
+       
+    }
+}
+
+@media screen and (max-width: 400px){
+    ul{
+        grid-template-columns: 1fr;
+    }
+}
+

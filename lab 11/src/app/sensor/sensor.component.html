@@ -1,0 +1,11 @@
+<ul>
+    <li *ngFor = "let sensor of sensorsService.sensors; let i = index">
+        <div class="alert alert-success" role="alert" [style.background-color]="sensor.status ? 'lightgreen' : 'pink'">
+            <strong>{{ sensor.id }}</strong>
+            {{sensor.name}}
+            <button (click)="removeSensor(sensor.id)">&times;</button>
+        </div>
+    </li>
+    
+</ul>
+
