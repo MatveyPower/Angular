@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-dream-app": {
+    "lab11": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/my-dream-app",
+            "outputPath": "dist/lab11",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "my-dream-app:build"
+            "browserTarget": "lab11:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "my-dream-app:build:production"
+              "browserTarget": "lab11:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "my-dream-app:build"
+            "browserTarget": "lab11:build"
           }
         },
         "test": {
@@ -111,15 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "my-dream-app:serve"
+            "devServerTarget": "lab11:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "my-dream-app:serve:production"
+              "devServerTarget": "lab11:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "my-dream-app"
+  "defaultProject": "lab11"
 }

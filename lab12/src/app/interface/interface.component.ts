@@ -10,7 +10,9 @@ export class InterfaceComponent {
   @Output() headWorkerCreated = new EventEmitter<{
     name: string, role: string
   }>();
+
   @ViewChild('workerRoleInput') workerRoleInput: ElementRef;
+
   onAddWorker(nameInput: HTMLInputElement) {
     this.workerCreated.emit({
       name: nameInput.value,

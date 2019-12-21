@@ -1,0 +1,15 @@
+<div class="sensor" *ngFor="let item of sensors; let i = index" [style.background-color]="item.status ? 'lightgreen' : 'pink'">
+    <p>
+    {{item.id}}
+    {{item.name}}
+    <button class="btn btn-danger btn-sm" (click) = removeSensor(i)>&times;</button>
+</p>
+</div>
+
+<form (submit) = "addSensor(sensor.value, status.checked)">
+    <input type="text" id = 'sensor' #sensor>
+    <br>
+    <button type="submit">Добавить</button>
+    <input type="radio" name="sensor" value="ВКЛ" #status checked>ВКЛ
+    <input type="radio" name="sensor" value="ВЫКЛ" >ВЫКЛ
+</form>
