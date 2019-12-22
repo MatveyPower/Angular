@@ -1,23 +1,42 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Person } from './shared/models/person.model';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  workerElements = []; // массив объектов, отобращаемых при помощи компонента worker
-  onWorkerAdded(workerData: { name: string, role: string }) { // обработчик события workerCreated из компонента Interface
-    this.workerElements.push({
-      name: workerData.name,
-      role: workerData.role,
-      type: 'сотрудник'
-    });
+export class AppComponent implements OnInit, OnDestroy {
+  title = 'Компоненты';
+  persons: Person[] = [];
+  constructor() {
   }
-  onHeadWorkerAdded(workerData: { name: string, role: string }) { // обработчик события headWorkerCreated из компонента Interface
-    this.workerElements.push({
-      name: workerData.name,
-      role: workerData.role,
-      type: 'руководитель'
-    });
+  
+  ngOnInit(): void {
+    this.persons.push(new Person('Ivan', 'Ivanov', 1));
+    this.persons.push(new Person('Ivan', 'Ivanov', 2));
+    this.persons.push(new Person('Ivan', 'Ivanov', 3));
+    this.persons.push(new Person('Ivan', 'Ivanov', 4));
+    this.persons.push(new Person('Ivan', 'Ivanov', 5));
   }
+
+  ngOnDestroy(): void {
+  }
+
+  onAddPerson(person: Person) {
+    let newId = this.persons.length == 0 ? 1 : this.persons[this.persons.length - 1].id + 1;
+    person.id = newId;
+    this.persons.push(person);
+  }
+
+  test(even) {
+    console.log(event);
+  }
+
+  deletePerson(id:number){
+    let deleteId = this.persons.findIndex(t => t.id === id);
+    this.persons.splice(deleteId,1);
+
+  }
+
 }

@@ -1,14 +1,9 @@
 <div class="container">
-
-  <app-interface (workerCreated)="onWorkerAdded($event)" (headWorkerCreated)="onHeadWorkerAdded($event)">
-  </app-interface>
-  <!--Задаем
-оработчики событий для EventEmmitorов из компонента interface -->
-  <hr>
-  <div class="row"></div>
-  <div class="col-xs-12">
-    <app-worker-element *ngFor="let workerElement of workerElements" [worker]="workerElement"></app-worker-element>
-    <!--Передача данных в
-свойство worker компонента workerElement -->
+  <div class="row">
+    <h2>{{title}}</h2>
   </div>
 </div>
+<app-person-view [inPerson]="person" *ngFor="let person of persons" (delete) = deletePerson($event)>
+</app-person-view>
+<hr>
+<app-person-add (addperson)="onAddPerson($event)"></app-person-add>

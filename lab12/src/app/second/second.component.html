@@ -1,0 +1,9 @@
+<button class="btn btn-primary" (click) = "edit()">Редактировать</button>
+<div *ngIf= open>
+    <div class="col-12">
+        <input type="text" class="form-control" placeholder="Имя" [(ngModel)]="person.firstname" >
+    </div>
+    <div class="col-12 mt-2">
+        <input type="text" class="form-control" placeholder="Фамилия" [(ngModel)]="person.lastname" >
+    </div>
+</div>

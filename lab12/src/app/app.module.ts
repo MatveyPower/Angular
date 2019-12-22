@@ -1,20 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
+import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
-import { InterfaceComponent } from './interface/interface.component';
-import { WorkerElementComponent } from './worker-element/worker-element.component';
+import { FirstComponent } from './first/first.component';
+import { SecondComponent } from './second/second.component';
+import { PersonViewComponent } from './person-view/person-view.component';
+import { PersonAddComponent } from './person-add/person-add.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    InterfaceComponent,
-    WorkerElementComponent
+    FirstComponent,
+    SecondComponent,
+    PersonViewComponent,
+    PersonAddComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
