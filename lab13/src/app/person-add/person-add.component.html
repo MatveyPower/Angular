@@ -1,0 +1,18 @@
+<form [formGroup]="userForm" (submit) = "onUserFormSubmit()">
+    <div class="row">
+        <div class="col-12">
+            <input type="text" class="form-control" formControlName="firstname" placeholder="Имя">
+        </div>
+        <div class="col-12 mt-2">
+            <input type="text" class="form-control" formControlName="lastname" placeholder="Фамилия" >
+        </div>
+        <div class="col-12 mt-2">
+            <input type="text" class="form-control" formControlName="phone"  placeholder="Телефон" [textMask]="{mask: mask}" [(ngModel)]="myModel" >
+        </div>
+        <div class="col-12 mt-2">
+            <div class="col-12">
+                <button  [disabled]="userForm.invalid" class="btn btn-primary">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</form>
