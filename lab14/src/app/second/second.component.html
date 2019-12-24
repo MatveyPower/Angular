@@ -1,0 +1,30 @@
+<!-- <button class="btn btn-primary" (click) = "edit()">Редактировать</button>
+<div *ngIf= open>
+    <div class="col-12">
+        <input type="text" class="form-control" placeholder="Имя" [(ngModel)]="person.firstname" >
+    </div>
+    <div class="col-12 mt-2">
+        <input type="text" class="form-control" placeholder="Фамилия" [(ngModel)]="person.lastname" >
+    </div>
+    <div class="col-12 mt-2">
+        <input type="text" class="form-control" formControlName="phone"  placeholder="Телефон" [textMask]="{mask: mask}" [(ngModel)]="person.phone" >
+    </div>
+</div> -->
+<button class="btn btn-primary" (click) = "edit()">Редактировать</button>
+<form [formGroup]="userForm" (submit) = "onUserFormSubmit()">
+    <div class="row" *ngIf= open>
+        <div class="col-12">
+            <input type="text" class="form-control" formControlName="firstname" placeholder="Имя" [(ngModel)]="person.firstname">
+        </div>
+        <div class="col-12 mt-2">
+            <input type="text" class="form-control" formControlName="lastname" placeholder="Фамилия" [(ngModel)]="person.lastname" >
+        </div>
+        <div class="col-12 mt-2">
+            <input type="text" class="form-control" formControlName="phone"  placeholder="Телефон" [textMask]="{mask: mask}" [(ngModel)]="person.phone" >
+        </div>
+        <div class="col-12 mt-2">
+            <div class="col-12">
+            </div>
+        </div>
+    </div>
+</form>

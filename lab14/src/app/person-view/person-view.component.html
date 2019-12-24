@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="row" >
+        <div class="col-3">{{inPerson.id}}</div>
+        <div class="col-3">{{inPerson.firstname}}</div>
+        <div class="col-3">{{inPerson.lastname}}</div>
+        <div class="col-3">{{inPerson.phone}}</div>
+        <app-first (click)="ondeletePerson(inPerson.id)"></app-first>
+        <app-second [person] = "inPerson"></app-second> 
+    </div>
+</div>

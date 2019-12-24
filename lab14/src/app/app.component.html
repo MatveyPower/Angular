@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <h2>{{title}}</h2>
+  </div>
+</div>
+<div class="col-12 mt-5">
+  <input type="text" class="form-control" placeholder="Поиск" [(ngModel)]="search">
+</div>
+<app-person-view [inPerson]="person" *ngFor="let person of persons | fitername:search;" (delete) = deletePerson($event)>
+</app-person-view>
+<hr>
+<app-person-add (addperson)="onAddPerson($event)"></app-person-add>
+<app-http (personJson) = "AddPersonJson($event)"  ></app-http>
