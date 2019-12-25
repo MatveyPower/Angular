@@ -45,6 +45,10 @@ export class AppComponent implements OnInit, OnDestroy {
   deletePerson(id:number){
     let deleteId = this.persons.findIndex(t => t.id === id);
     this.persons.splice(deleteId,1);
+    this.search = ' '
+    setTimeout(() => {
+      this.search = ''
+    }, 10);
 
   }
 
