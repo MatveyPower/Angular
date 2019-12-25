@@ -32,7 +32,10 @@ export class AppComponent implements OnInit, OnDestroy {
     let newId = this.persons.length == 0 ? 1 : this.persons[this.persons.length - 1].id + 1;
     person.id = newId;
     this.persons.push(person);
-    this.search = ''
+    this.search = ' '
+    setTimeout(() => {
+      this.search = ''
+    }, 10);
   }
 
   test(even) {
