@@ -1,0 +1,33 @@
+<!-- <button class="btn btn-primary" (click) = "edit()">Редактировать</button>
+<div *ngIf= open>
+    <div class="col-12">
+        <input type="text" class="form-control" placeholder="Имя" [(ngModel)]="person.firstname" >
+    </div>
+    <div class="col-12 mt-2">
+        <input type="text" class="form-control" placeholder="Фамилия" [(ngModel)]="person.lastname" >
+    </div>
+    <div class="col-12 mt-2">
+        <input type="text" class="form-control" formControlName="phone"  placeholder="Телефон" [textMask]="{mask: mask}" [(ngModel)]="person.phone" >
+    </div>
+</div> -->
+
+<form [formGroup]="userForm" (ngSubmit) = "onUserFormSubmit()">
+    <div class="row">
+        <div class="col-12">
+            <input type="text" class="form-control" formControlName="firstname" placeholder="Имя" >
+        </div>
+        <div class="col-12 mt-2">
+            <input type="text" class="form-control" formControlName="lastname" placeholder="Фамилия"  >
+        </div>
+        <div class="col-12 mt-2">
+            <input type="text" class="form-control" formControlName="phone"  placeholder="Телефон" [textMask]="{mask: mask}"  >
+        </div>
+        <div class="col-12 mt-2">
+            <button class="btn btn-primary" [disabled]="userForm.invalid">Редактировать</button>
+            <div class="col-12">
+            </div>
+        </div>
+    </div>
+</form>
+
+<router-outlet></router-outlet>

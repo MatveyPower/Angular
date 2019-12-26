@@ -1,0 +1,15 @@
+<div class="container">
+    <app-http (personJson) = "AddPersonJson($event)"></app-http> 
+    <input type="text" class="form-control" placeholder="Поиск" [(ngModel)]="search">
+    <div class="row" *ngFor="let person of persons | fitername:search;" >
+        
+        
+         <a [routerLink]="['/edit', person.id]" ><div class="col-3">{{person.id}}</div></a>
+        <div class="col-3">{{person.firstname}}</div>
+        <div class="col-3">{{person.lastname}}</div>
+        <div class="col-3">{{person.phone}}</div>
+    
+        <app-first (click)="deletePerson(person.id)"></app-first>
+        <!-- <app-second [person] = "inPerson"></app-second>  -->
+    </div>
+</div>
