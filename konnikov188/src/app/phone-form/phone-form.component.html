@@ -1,0 +1,41 @@
+<form [formGroup]="userForm" (submit) = "onUserFormSubmit()" >
+     <div class="form-group">
+    <label  for="titles"> Название:</label>
+<input type="text" class="form-control" id="titles" name="titles" formControlName="title" >  
+
+<div>
+    <label for="vendorCode">Артикул:</label>
+    <input type="text" class="form-control" id="vendorCode" name="vendorCodes" formControlName="vendorCode">
+</div>
+<div>
+    <label for="price">Цена:</label>
+    <input type="text" class="form-control" id="price" name="prices"  formControlName="price" > 
+</div>
+<div>
+    <label for="manufacturer">Производитель:</label>
+    <input type="text" class="form-control" id="manufacturer" name="manufacturers"  formControlName="manufacturer">
+</div>
+<div>
+    <label for="yearIssue">Год выпуска:</label>
+    <input type="text" class="form-control" id="yearIssue" name="yearIssues"  formControlName="yearIssue">
+</div>
+<div>
+    <label for="numberOrders">Количетсво заказов:</label>
+    <input type="text" class="form-control" id="numberOrders"  name="numberOrderss"  formControlName="numberOrders">
+</div>
+<div>
+    <label for="mpx">Камера(МПКс):</label>
+    <input type="text" class="form-control" id="mpx" name="mpxs"  formControlName="mpx">
+</div>
+<div>
+    <label for="screenResolution">Разрешение экрана:</label>
+    <input type="text" class="form-control" id="screenResolution" name="screenResolutions" formControlName="screenResolution">
+</div>
+<div>
+    <button class="btn btn-primary" [disabled]="userForm.invalid" >ДОБАВИТЬ</button>
+    <router-outlet></router-outlet>
+
+    
+</div>
+</div>
+</form>

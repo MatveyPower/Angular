@@ -1,0 +1,22 @@
+<h1>МИША</h1>
+
+<div  *ngFor="let item of caseservice.cases" >
+    <div [style.color] = "item.succes ? '#808080': '#000'" [style.background-color] = "expired(item.date) ? '#FF0000': ''" >
+        {{item.id}} 
+        {{item.title}} 
+        {{item.data}}
+        {{item.date}}
+    </div>
+   
+    <button (click) = remove(item.id)>Удалить</button>
+    <button (click) = edit(item.id)>Редактировать</button>
+    <button (click) = succesTrue(item) *ngIf="!item.succes">Пометить как выполненное</button>
+    <button (click) = succesFalse(item) *ngIf="item.succes">Восстановить</button>
+<div *ngIf="open == item.id">
+    <ul>
+        <li><input type="text" name="title" [(ngModel)]="item.title"></li>
+        <li><input type="text" name="data" [(ngModel)]="item.data"></li>
+        <li><input type="date" name="date" [(ngModel)]="item.date"></li>
+    </ul>
+</div>
+</div> 

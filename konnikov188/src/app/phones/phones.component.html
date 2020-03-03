@@ -1,0 +1,73 @@
+<div class="filter">
+    <label  for="searchName">Поиск по модели </label>
+    <input type="text" id="searchName" [(ngModel)] = 'searchString'>
+
+    <label for="searchMan">Поиск по Производителю </label>
+    <input type="text" id="searcMan"  [(ngModel)] = 'searchManufacturer'>
+</div>
+<div class="btns">
+<button type="button"  class="btn btn-warning" (click) = "sortById()" >Сортировать по ID по возрастанию</button>
+<button type="button" class="btn btn-warning" (click) = "sortById1()" >Сортировать по ID по убыванию</button>
+<button type="button" class="btn btn-warning" (click) = "sortByPrice()" >Сортировать по Цене по возрастанию</button>
+<button type="button" class="btn btn-warning" (click) = "sortByPrice1()" >Сортировать по Цене по убыванию</button>
+<button type="button" class="btn btn-warning" (click) = "sortByNumberOrders()" >Сортировать по количеству заказов по возрастанию</button>
+<button  type="button" class="btn btn-warning" (click) = "sortByNumberOrders1()" >Сортировать по количеству заказов по убыванию</button>
+</div>
+
+
+<ul>
+    <li *ngFor="let phone of serviceService.phones | filterPhone:searchString | filterManufacturer:searchManufacturer">
+        <div *ngIf="phone.id != 0">
+        {{phone.id}}
+        Название:{{phone.title}}
+        Артикул:{{phone.vendorCode}}
+        Цена:{{phone.price}}
+        Производитель:{{phone.manufacturer}}
+        Год выпуска:{{phone.yearIssue}}
+        Количество заказов:{{phone.numberOrders}} <span >
+            <button *ngIf="open!==phone.id && buttonPlus" type="button" class="btn btn-primary" (click) = addOne(phone)>+</button>
+            <button disabled *ngIf="open==phone.id || !buttonPlus" type="button" class="btn btn-primary" (click) = addOne(phone)>+</button>
+        </span> 
+        <button  type="button" class="btn btn-primary" (click) = "removePhone(phone.id)">&times;</button>
+        <button type="button" class="btn btn-primary" (click) = "edit(phone)" (click) = "editPhone(phone)">Редактировать</button>
+        <div *ngIf= "open==phone.id">
+            <div>
+                Название
+                <input type="text" placeholder="" [(ngModel)]="phone.title" >
+            </div>
+            <div>
+                Артикул
+                <input type="text" placeholder="" [(ngModel)]="phone.vendorCode" >
+            </div>
+            <div>
+                Цена
+                <input type="text" placeholder="" [(ngModel)]="phone.price" >
+            </div>
+            <div>
+                Производитель
+                <input type="text" placeholder="" [(ngModel)]="phone.manufacturer" >
+            </div>
+            <div>
+                Год выпуска
+                <input type="text" placeholder="" [(ngModel)]="phone.yearIssue" >
+            </div>
+            <div>
+                Количество заказов
+                <input type="text" placeholder="" [(ngModel)]="phone.numberOrders" >
+            </div>
+            <div>
+                Камера
+                <input type="text" placeholder="" [(ngModel)]="phone.mpx" >
+            </div>
+            <div>
+                Разрешение экрана
+                <input type="text" placeholder="" [(ngModel)]="phone.screenResolution" >
+            </div>
+        </div>
+        </div>
+    </li>
+</ul> 
+
+
+
+    

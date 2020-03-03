@@ -1,0 +1,15 @@
+<h1>{{title | uppercase}}</h1>
+<p>{{title | slice:0:3}}</p>
+<p>{{title | slice:0:4 | uppercase}}</p>
+
+<p>{{now | date:'fullDate'}}</p>
+<p>{{now | date:'shortDate'}}</p>
+<p>{{now | date:'shortTime'}}</p>
+<p>{{now | date:'dd.MM.yyyy hh:mm'}}</p>
+
+<!-- обязательно ознакомиться с документацией -->
+
+<p>{{test | myFilter}}</p>
+<hr>
+<input type="text" [(ngModel)]="searchStr"> <br>
+<p *ngFor="let month of months | myFilter:searchStr">{{month}}</p>

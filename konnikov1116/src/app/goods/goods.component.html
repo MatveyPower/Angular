@@ -1,0 +1,65 @@
+
+ <div class="filter">
+    <label  for="searchName">Поиск по категории </label>
+    <input type="text" id="searchName" [(ngModel)] = 'searchString'>
+</div>
+
+<div class="btns">
+<button type="button"  class="btn btn-warning" (click) = "sortById()" >Сортировать по ID по возрастанию</button>
+<button type="button" class="btn btn-warning" (click) = "sortById1()" >Сортировать по ID по убыванию</button>
+<button type="button" class="btn btn-warning" (click) = "sortByPrice()" >Сортировать по Цене по возрастанию</button>
+<button type="button" class="btn btn-warning" (click) = "sortByPrice1()" >Сортировать по Цене по убыванию</button>
+<button type="button" class="btn btn-warning" (click) = "sortByQuantity()" >Сортировать по количеству на складе по возрастанию</button>
+<button  type="button" class="btn btn-warning" (click) = "sortByQuantity1()" >Сортировать по количеству на складе по убыванию</button>
+</div>
+
+
+<ul>
+    <li *ngFor="let good of serviceService.goods | filterCategory:searchString">
+        <div *ngIf="good.id != 0">
+        {{good.id}}
+        Название:{{good.title}}
+        Категория:{{good.category}}
+        Вес:{{good.weight}}
+        Цена:{{good.price}}
+        Количество на складе:{{good.quantity}}
+         <span >
+            <button *ngIf="open!==good.id && buttonPlus" type="button" class="btn btn-primary" (click) = addOne(good)>+</button>
+            <button disabled *ngIf="good==good.id || !buttonPlus" type="button" class="btn btn-primary" (click) = addOne(good)>+</button>
+        </span>
+        <span >
+            <button *ngIf="open!==good.id && buttonPlus" type="button" class="btn btn-primary" (click) = minusOne(good)>-</button>
+            <button disabled *ngIf="good==good.id || !buttonPlus" type="button" class="btn btn-primary" (click) = minusOne(good)>-</button>
+        </span>
+        <button  type="button" class="btn btn-primary" (click) = "removeGood(good.id)">Удалить</button>
+        <button type="button" class="btn btn-primary" (click) = "edit(good)" (click) = "editGood(good)">Редактировать</button>
+        <div *ngIf= "open==good.id">
+            <div>
+                Название
+                <input type="text" placeholder="" [(ngModel)]="good.title" >
+            </div>
+            <div>
+                Категория
+                <input type="text" placeholder="" [(ngModel)]="good.category" >
+            </div>
+            <div>
+                Вес
+                <input type="text" placeholder="" [(ngModel)]="good.weight" >
+            </div>
+            <div>
+                Цена
+                <input type="text" placeholder="" [(ngModel)]="good.price" >
+            </div>
+            <div>
+                Количество
+                <input type="text" placeholder="" [(ngModel)]="good.quantity" >
+            </div>
+            
+        </div>
+    </div>
+    </li>
+</ul> 
+
+
+
+    

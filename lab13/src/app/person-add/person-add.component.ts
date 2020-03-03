@@ -33,8 +33,7 @@ export class PersonAddComponent implements OnInit {
         [Validators.required]),
       lastname: new FormControl({ value: '', disabled: this.disabledForms },
         [Validators.required]),
-      phone: new FormControl({ value: '', disabled: this.disabledForms }, 
-        [Validators.required ,Validators.pattern(/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/)])
+      phone: new FormControl({ value: '', disabled: this.disabledForms }), 
     });
     
   }

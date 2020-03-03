@@ -1,0 +1,43 @@
+<form [formGroup]="userForm" (submit) = "onUserFormSubmit()" >
+    <div class="form-group">
+   <label  for="titles"> Название:</label>
+<input type="text" class="form-control" id="titles" name="titles" formControlName="title" >  
+
+<div>
+   <label for="vendorCode">Артикул:</label>
+   <input type="text" class="form-control" id="vendorCode" name="vendorCodes"  formControlName="vendorCode">
+</div>
+<div>
+   <label for="price">Цена:</label>
+   <input type="text" class="form-control" id="price" name="prices"  formControlName="price" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" > 
+</div>
+<div>
+   <label for="manufacturer">Производитель:</label>
+   <input type="text" class="form-control" id="manufacturer" name="manufacturers"  formControlName="manufacturer">
+</div>
+<div>
+   <label for="category">Категория:</label>
+   <select class="form-control" name="category" id="categorys" formControlName="category">
+    <option value="Мебель">Мебель</option>
+    <option value="Техника">Техника</option>
+    <option value="Книги">Книги</option>
+    <option value="Телефоны">Телефоны</option>
+   </select>
+</div>
+
+<div>
+   <label for="weight">Вес:</label>
+   <input type="text" class="form-control" id="weight" name="weights"  formControlName="weight" onkeyup="this.value = this.value.replace(/[^\d]/g,'');">
+</div>
+<div>
+   <label for="quantity">Количество на складе:</label>
+   <input type="text" class="form-control" id="quantity" name="quantitys" formControlName="quantity" onkeyup="this.value = this.value.replace(/[^\d]/g,'');">
+</div>
+<div>
+   <button class="btn btn-primary" [disabled]="userForm.invalid" >ДОБАВИТЬ</button>
+   <router-outlet></router-outlet>
+
+   
+</div>
+</div>
+</form>

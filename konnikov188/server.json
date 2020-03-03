@@ -1,0 +1,38 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "iphoneX",
+      "vendorCode": "12abcr",
+      "price": 60000,
+      "manufacturer": "Apple",
+      "yearIssue": 2017,
+      "numberOrders": 23435645,
+      "mpx": 24,
+      "screenResolution": "1920x1080"
+    },
+    {
+      "id": 2,
+      "title": "iphoneX",
+      "vendorCode": "12abcr",
+      "price": 40000,
+      "manufacturer": "Apple",
+      "yearIssue": 2017,
+      "numberOrders": 232654,
+      "mpx": 24,
+      "screenResolution": "1920x1080"
+    },
+    {
+      "id": 3,
+      "title": "iphoneX",
+      "vendorCode": "12abcr",
+      "price": 50000,
+      "manufacturer": "Apple",
+      "yearIssue": 2017,
+      "numberOrders": 1654,
+      "mpx": 24,
+      "screenResolution": "1920x1080"
+    }
+    
+  ]
+}

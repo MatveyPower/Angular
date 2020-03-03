@@ -1,0 +1,17 @@
+<form [formGroup]="userForm" (submit)="onUserFormSubmit()">
+
+   
+
+        <label for="titles"> Название:</label>
+        <input type="text" class="form-control" id="titles" name="titles" formControlName="title">
+    
+        <label for="vendorCode">Артикул:</label>
+        <input type="text" class="form-control" id="vendorCode" name="vendorCodes" formControlName="data">
+   
+        <label for="price">Цена:</label>
+        <input type="date" class="form-control" id="price" name="prices" formControlName="date">
+    
+
+    <button class="btn btn-primary" [disabled]="userForm.invalid">ДОБАВИТЬ</button>
+
+</form>
