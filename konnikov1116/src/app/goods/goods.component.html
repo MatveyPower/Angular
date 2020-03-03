@@ -36,23 +36,36 @@
         <div *ngIf= "open==good.id">
             <div>
                 Название
-                <input type="text" placeholder="" [(ngModel)]="good.title" >
+                <input class="form-control" type="text" placeholder="" [(ngModel)]="good.title" >
             </div>
             <div>
-                Категория
-                <input type="text" placeholder="" [(ngModel)]="good.category" >
+                Артикул
+                <input class="form-control" type="text" placeholder="" [(ngModel)]="good.vendorCode" >
             </div>
+            <div>
+                Производитель
+                <input class="form-control" type="text" placeholder="" [(ngModel)]="good.manufacturer" >
+            </div>
+            <div>
+                <label for="category">Категория:</label>
+                <select class="form-control" name="category" id="categorys" [(ngModel)]="good.category">
+                 <option value="Мебель">Мебель</option>
+                 <option value="Техника">Техника</option>
+                 <option value="Книги">Книги</option>
+                 <option value="Телефоны">Телефоны</option>
+                </select>
+             </div>
             <div>
                 Вес
-                <input type="text" placeholder="" [(ngModel)]="good.weight" >
+                <input type="text" class="form-control" placeholder=""  onkeyup="this.value = this.value.replace(/[^\d]/g,'');" [(ngModel)]="good.weight" >
             </div>
             <div>
                 Цена
-                <input type="text" placeholder="" [(ngModel)]="good.price" >
+                <input type="text" class="form-control" placeholder="" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" [(ngModel)]="good.price" >
             </div>
             <div>
                 Количество
-                <input type="text" placeholder="" [(ngModel)]="good.quantity" >
+                <input type="text" class="form-control" placeholder="" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" [(ngModel)]="good.quantity" >
             </div>
             
         </div>
